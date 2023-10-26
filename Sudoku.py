@@ -1,27 +1,30 @@
-sudo = [[6,0,5,0,0,0,0,9,0],
-        [0,0,0,0,0,7,0,2,0],
-        [1,0,0,0,0,0,0,0,0],
-        [0,0,0,9,0,8,0,0,0],
-        [0,0,0,0,0,0,5,0,0],
-        [4,0,0,0,0,0,1,0,6],
-        [0,8,0,0,0,3,0,0,0],
-        [0,0,0,5,1,0,0,0,0],
-        [0,2,0,0,0,0,0,0,0]]
+# reading puzzle from txt file :
+puzzle = open("puzzle.txt", "r")
+print(puzzle.read())
 
-#Enter number from user 
+# Enter number from user
 print(input("Please enter your number:"))
-userNumber = input()
+userNumber = input()  # the number we should predict to fill the cell
 
 # is number can put in row ?
 def sudoFunc(row, column, userNumber):
-    for i in range(0,9):
-        if sudo[row][i] == userNumber:
-            return False     
+    for i in range(0, 9):  # itrate  row if the number is present it would return false
+        if puzzle[row][i] == userNumber:
+            print("false-------")
+            return False
  # is number can put in column ?
-    for i in range(0,9):
-        if sudo[i][column] == userNumber:
-            return False 
-# is number can put in square ?
+    for i in range(0, 9):  # if the number we enter already present in the particular column it would return false
+        if puzzle[column][i] == userNumber:
+            print("false")
+            return False
+
+# is my solution to itrate row and column true ?
+
+
+
+
+
+
 
 
 
