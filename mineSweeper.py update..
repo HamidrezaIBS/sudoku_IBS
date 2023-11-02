@@ -1,0 +1,36 @@
+import random
+
+def createBoard(sizeBoard, mines):
+    # it's not important how many times for will executing, So after looping on sizeBoard I put it in Board Variable.
+    board = [[' ' for i in range(sizeBoard)] for j in range(sizeBoard)]
+    positions = set()
+
+    # in this loop i create row and column by random from 0 to user entered size of board.
+    while len(positions) < mines:
+        row = random.randint(0, sizeBoard - 1)
+        col = random.randint(0, sizeBoard - 1)
+        if board[row][col] != '*':
+            board[row][col] = '*'
+            positions.add((row, col))
+
+    return board, positions
+
+# def display(board):
+#     # I'm working on it...
+
+
+def main():
+    # try to get size of board & number of mines in board from user :
+    sizeBoard = input("please enter the size of board:")
+    mines = input("please enter the number of mines: ", sizeBoard * sizeBoard - 1)  
+
+    while True: # check the type of input is integer or not ?
+        if type(sizeBoard) & type(mines) == int: 
+            return sizeBoard, mines
+        else:
+            print("input values are not integer")
+        # createBoard(sizeBoard, mines) 
+
+main()
+
+        
